@@ -15,7 +15,7 @@ test: ## run 'go test'
 
 .PHONY: build
 build: ## build the provider as terraform-provider-validate
-	go build -o terraform-provider-validate
+	CGO_ENABLED=0 go build -o terraform-provider-validate
 
 .PHONY: build-darwin
 build-darwin: ## go build darwin amd64 and 386 versions
